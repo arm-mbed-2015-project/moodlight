@@ -3,7 +3,9 @@ ARM IoT 2015 mbed
 
 ## Building
 
-First off, install libc6-dev
+Open `src/main.h` and edit the server address and port.
+
+Then install libc6-dev
 
 ```bash
 sudo apt-get install libc6-dev
