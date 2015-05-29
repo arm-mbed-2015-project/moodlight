@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-xs-12 
+              col-sm-8 col-sm-offset-2 
+              col-md-6 col-md-offset-3 
+              text-center">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Please select an endpoint</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <select class="form-control" ng-model="selected">
+          <option ng-repeat="ep in endpoints">{{ ep }}</option>
+        </select>
+        
+        <br>
+
+        <button type="button" class="btn btn-primary" ng-click="go()">
+          Select
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

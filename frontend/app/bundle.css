@@ -1,0 +1,59 @@
+#main-container {
+  margin-top: 70px; }
+
+.pointer {
+  cursor: pointer; }
+
+.mode-selector a.mode {
+  font-size: 20px;
+  padding: 0px 10px; }
+  .mode-selector a.mode.selected {
+    font-weight: bold; }
+
+@font-face {
+  font-family: Roboto-Light;
+  src: url(fonts/Roboto-Light.ttf); }
+#presentation {
+  height: 85vh;
+  font-family: Roboto-Light;
+  position: relative; }
+  #presentation .offline-text {
+    font-size: 20vmin;
+    position: relative;
+    top: 50%; }
+  #presentation .left-side .color-picker {
+    margin-bottom: 2.5vh; }
+  #presentation .left-side .mode-button {
+    height: 3em;
+    width: 100%;
+    margin-bottom: 2.5vh;
+    font-size: 3vh; }
+  #presentation .right-side {
+    height: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 15vmin; }
+    #presentation .right-side .temperature, #presentation .right-side .motion {
+      position: relative;
+      border-radius: 6px; }
+      #presentation .right-side .temperature > div, #presentation .right-side .motion > div {
+        width: 100%;
+        position: relative;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%); }
+    #presentation .right-side .temperature {
+      height: 65%;
+      background-color: #F0F0F0;
+      font-size: 1em;
+      margin-bottom: 0.25em; }
+    #presentation .right-side .motion {
+      height: 35%;
+      background-color: #F0F0F0;
+      font-size: 0.7em; }
+      #presentation .right-side .motion.active {
+        background-color: #FF3E00;
+        color: #FFF; }
+
+/*# sourceMappingURL=bundle.css.map */

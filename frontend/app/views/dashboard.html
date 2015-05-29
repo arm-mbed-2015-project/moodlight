@@ -1,0 +1,71 @@
+<span ng-if="!state.online">
+  <div class="alert alert-danger">
+    Looks like this endpoint is offline. 
+  </div>
+</span>
+
+<span ng-if="state.online">
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Operation Mode</h3>
+      <mode-selector model="state.mode" options="modeOptions" 
+      on-change="modeChanged"></mode-selector>
+    </div>
+  </div>
+
+  <div class="row" ng-if="showControls()">
+    <div class="col-md-12">
+      <h3>Mode Controls</h3>
+
+      <form class="form-inline">
+        <div class="form-group">
+          <label for="colorAndIntensity">Color and intensity</label>
+          <input id="colorAndIntensity" class="form-control" colorpicker="rgba" 
+          type="text" ng-model="manual.color">
+        </div>
+
+        <div class="btn-group">
+          <label class="btn btn-primary" ng-model="manual.spinning" 
+          btn-radio="0">
+            Not Spinning
+          </label>
+          
+          <label class="btn btn-primary" ng-model="manual.spinning" 
+          btn-radio="1">
+            Spinning
+          </label>
+          
+          <label class="btn btn-primary" ng-model="manual.spinning" 
+          btn-radio="2">
+            Random Spinning
+          </label>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="row" ng-controller="RawDataCtrl">
+    <div class="col-md-12">
+      <h3>Raw Data</h3>
+
+      <flot dataset="flotData" options="flotOptions" 
+      width="100%" height="300px"></flot>
+      
+      <table class="table table-condensed table-highligt">
+        <thead>
+          <tr>
+            <th>Key</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr ng-repeat="(key, value) in data">
+            <td>{{ key }}</td>
+            <td>{{ value }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</span>

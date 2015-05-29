@@ -1,0 +1,8 @@
+<div class="mode-selector">
+  <a class="pointer mode"
+  ng-repeat="(index, text) in options"
+  ng-class="{ selected: model == index}"
+  ng-click="setMode(index)">
+    {{ text }}
+  </a>
+</div>

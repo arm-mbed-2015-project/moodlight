@@ -1,0 +1,57 @@
+Debug
+Release
+.hg/
+.settings/
+.project
+.cproject
+
+*.lss
+*.eep
+*.map
+*.srec
+
+# Object files
+*.d
+*.o
+*.ko
+*.obj
+*.elf
+*.gcda
+*.gcno
+
+# Libraries
+*.lib
+*.a
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+*.bin
+
+# qt creator files
+*.config
+*.creator
+*.creator.user
+*.files
+*.includes
+
+# test results
+results
+*.info
+
+# don't remove SYS_OBJECTS
+!/external/mbed/TARGET_K64F/TOOLCHAIN_GCC_ARM/**/*.o
+!/external/mbed/TARGET_K64F/TOOLCHAIN_GCC_ARM/**/*.a
+
+# don't remove device server objects
+!/external/nsdl_lib/*.o

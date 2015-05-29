@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-md-7">
+    <p class="input-group" 
+    style="margin-top: 2.4em;">
+      <input type="text" class="form-control" 
+      ng-model="model" 
+      is-open="isOpen" 
+      datepicker-options="options" 
+      datepicker-popup="yyyy-MM-dd"
+      ng-required="true" 
+      close-text="Close" />
+
+      <span class="input-group-btn">
+        <button type="button" class="btn btn-default" 
+        ng-click="open($event)">
+          <i class="glyphicon glyphicon-calendar"></i>
+        </button>
+      </span>
+    </p>
+  </div>
+
+  <div class="col-md-5">
+    <timepicker ng-model="model" hour-step="1" minute-step="15" 
+    show-meridian="false"></timepicker>
+  </div>
+</div>

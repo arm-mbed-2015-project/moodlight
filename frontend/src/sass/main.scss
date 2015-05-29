@@ -1,0 +1,102 @@
+//////////
+// main //
+//////////
+
+#main-container {
+  margin-top: 70px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+///////////////////
+// mode selector //
+///////////////////
+
+.mode-selector {
+  a.mode {
+    font-size: 20px;
+    padding: 0px 10px;
+
+    &.selected {
+      font-weight: bold;
+    }
+  }
+}
+
+//////////////////
+// presentation //
+//////////////////
+
+@font-face {
+  font-family: Roboto-Light;
+  src: url(fonts/Roboto-Light.ttf);
+}
+
+#presentation {
+  height: 85vh;
+  font-family: Roboto-Light;
+  position: relative;
+
+  .offline-text {
+    font-size: 20vmin;
+    position: relative;
+    top: 50%;
+  }
+
+  .left-side {
+    $size: 1vh;
+
+    .color-picker {
+      margin-bottom: 2.5 * $size;
+    }
+
+    .mode-button {
+      height: 3em;
+      width: 100%;
+      margin-bottom: 2.5 * $size;
+      font-size: 3 * $size;
+    }
+  }
+
+  .right-side {
+    height: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 15vmin;
+
+    .temperature, .motion {
+      position: relative;
+      border-radius: 6px;
+
+      & > div {
+        width: 100%;
+
+        position: relative;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+      }
+    }
+
+    .temperature {
+      height: 65%;
+      background-color: #F0F0F0;
+      font-size: 1em;
+      margin-bottom: 0.25em;
+    }
+
+    .motion {
+      height: 35%;
+      background-color: #F0F0F0;
+      font-size: 0.7em;
+
+      &.active {
+        background-color: #FF3E00;
+        color: #FFF;
+      }
+    }
+  }
+}

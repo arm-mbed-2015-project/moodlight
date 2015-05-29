@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Moodlight</title>
+    
+    <link rel="stylesheet" href="bundle.css"/>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <!-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css"/> -->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <link rel="stylesheet" href="bower_components/angular-bootstrap-colorpicker/css/colorpicker.min.css" />
+    <!-- <link rel="stylesheet" href="bower_components/angular-color-picker/angular-color-picker.css" /> -->
+    <link rel="stylesheet" href="vendor/jquery-colorpickersliders/jquery.colorpickersliders.css" />
+  </head>
+
+  <body ng-app="moodlightApp">
+    <!-- navigation -->
+    <nav ng-controller="NavCtrl" class="navbar navbar-inverse navbar-fixed-top" 
+    role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" ng-click="toggle()">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          
+          <a class="navbar-brand" href="#/endpoints">
+            {{ endpointText() }}
+          </a>
+        </div>
+
+        <div class="collapse navbar-collapse" collapse="collapsed">
+          <ul class="nav navbar-nav">
+            <li ng-repeat="link in links"
+            ng-show="endpoint" 
+            class="{{ epLinkClass(link.path) }}">
+              <a ng-href="{{ epLink(link.path) }}" >
+                {{ link.text }}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div id="main-container" class="container">
+      <!-- no js qq -->
+      <noscript>
+        <div class="alert alert-danger">Please enable Javascript!</div>
+      </noscript>
+
+      <!-- main content -->
+      <ng-view></ng-view>
+    </div>
+
+    <!-- library js -->
+    <!-- todo: bundle these into vendor.js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/lodash/dist/lodash.js"></script>
+    <script src="bower_components/socket.io-client/socket.io.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angularjs-dropdown-multiselect/dist/angularjs-dropdown-multiselect.min.js"></script>
+    <script src="bower_components/flot/jquery.flot.js"></script>
+    <script src="bower_components/flot/jquery.flot.time.js"></script>
+    <script src="bower_components/angular-flot/angular-flot.js"></script>
+    <script src="bower_components/angular-bootstrap-colorpicker/js/bootstrap-colorpicker-module.js"></script>
+    <!-- <script src="bower_components/angular-color-picker/angular-color-picker.js"></script> -->
+
+    <script src="vendor/jquery-colorpickersliders/libraries/prettify/prettify.js"></script>
+    <script src="vendor/jquery-colorpickersliders/libraries/tinycolor.js"></script>
+    <script src="vendor/jquery-colorpickersliders/jquery.colorpickersliders.js"></script>
+
+    <!-- application js -->
+    <script src="config.js"></script>
+    <script src="bundle.js"></script>
+  </body>
+</html>

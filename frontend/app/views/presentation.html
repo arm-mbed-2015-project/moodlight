@@ -1,0 +1,35 @@
+<div class="row" id="presentation">
+  <div ng-if="state.online" class="col-xs-4 left-side">
+    <div class="color-picker">
+      <color-sliders rgb-model="manual.color"></color-sliders>
+    </div>
+
+    <button type="button" class="btn btn-lg color mode-button" 
+    ng-repeat="fakeMode in fakeModeOptions"
+    ng-click="fakeModeChanged($index)"
+    ng-class="{ 'btn-primary': state.fakeMode == $index }"
+    ng-disabled="state.busy">
+      {{ fakeModeOptions[$index] }}
+    </button>
+  </div>
+  
+  <div ng-if="state.online" class="col-xs-8 right-side">
+    <div class="temperature" ng-controller="TemperatureCtrl">
+      <div>
+        {{ value | number : 1 }} C
+      </div>
+    </div>
+
+    <div class="{{ states[motion].class }}" ng-controller="MotionCtrl">
+      <div>
+        {{ states[motion].text }}
+      </div>
+    </div>
+  </div>
+  
+  <div ng-if="!state.online" class="col-xs-12 text-center">
+    <div class="offline-text">
+      Offline :(
+    </div>
+  </div>
+</div>

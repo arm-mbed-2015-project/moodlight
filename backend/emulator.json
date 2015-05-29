@@ -1,0 +1,91 @@
+/*
+  Moodlight
+*/
+
+{
+  "frequency-sec": 1,
+  "end-point": {
+    "name": "moodlight-%ID",
+    "domain": "domain",
+    "type": "moodlight",
+    "context": "",
+    "instance": "",
+    "lifetime-min": 60,
+    "register-minimum-delay-sec": 0,
+    "register-maximum-delay-sec": 0,
+    "register-maximum-retries": 0
+  },
+  "resources": [{
+    "uri": "/mode", 
+    "rt":  "",
+    "if": "",
+    "ct":   "0",
+    "methods": ["GET", "PUT"],
+    "obs": false,
+    "values": ["%RND[0,2]"]
+  }, {
+    "uri": "/led_spinning", 
+    "rt":  "",
+    "if": "",
+    "ct":   "0",
+    "methods": ["GET", "PUT"],
+    "obs": false,
+    "values": ["%RND[0,1]"]
+  }, {
+    "uri": "/led_color", 
+    "rt":  "",
+    "if": "",
+    "ct":   "0",
+    "methods": ["GET", "PUT"],
+    "obs": false,
+    "values": ["0xaabbccff", "0x11223344", "0xff00ff77"]
+  }, {
+    "uri": "/sen/temperature", 
+    "rt":  "",
+    "if": "",
+    "ct":   "0",
+    "methods": ["GET"],
+    "obs": true,
+    "values": ["%RND[-20,20]"]
+  }, {
+    "uri": "/sen/humidity", 
+    "rt":  "",
+    "if": "",
+    "ct":   "0",
+    "methods": ["GET"],
+    "obs": true,
+    "values": ["%RND[0,100]"]
+  }, {
+    "uri": "/sen/illuminance", 
+    "rt":  "",
+    "if": "",
+    "ct":   "0",
+    "methods": ["GET"],
+    "obs": true,
+    "values": ["%RND[0,100]"]
+  }, {
+    "uri": "/sen/motion", 
+    "rt":  "",
+    "if": "",
+    "ct":   "0",
+    "methods": ["GET"],
+    "obs": true,
+    "values": [0, 1]
+  }, {
+    "uri": "/sen/bpm", 
+    "rt":  "",
+    "if": "",
+    "ct":   "0",
+    "methods": ["GET"],
+    "obs": true,
+    "values": ["%RND[0,200]"]
+  }, {
+    "uri": "/sen/amplitude", 
+    "rt":  "",
+    "if": "",
+    "ct":   "0",
+    "methods": ["GET"],
+    "obs": true,
+    "values": [-0.77, 0.21, 1, -0.90, 0.67, -0.55]
+  }]
+}

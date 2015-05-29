@@ -1,0 +1,18 @@
+# http://git-scm.com/docs/gitignore
+
+!.gitkeep
+tmp
+.idea
+.DS_Store
+logs/*
+
+.sass-cache/
+bower_components/
+node_modules/
+
+/coverage/
+/unit-tests/*.js
+/e2e-tests/*.js
+!protractor.conf.js
+
+/app/config.js
