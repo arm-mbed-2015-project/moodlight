@@ -51,13 +51,17 @@ registerAggregated = (agg) ->
   express.app.get "/endpoints/:endpoint/stats/#{agg}", (req, res, next) ->
     return unless isValidRequest req, res
 
-    from = moment.utc(req.query.from).millisecond(0).second(0)
+    from = moment.utc(req.query.from).milliseconds(0)
     to = moment.utc(req.query.to)
 
-    if agg is '5m'
-      from.minutes(from.minutes() - from.minutes() % 5)
+    if agg is '30s'
+      from.seconds(from.seconds() - from.seconds() % 30)
+
+    else if agg is '5m'
+      from.seconds(0).minutes(from.minutes() - from.minutes() % 5)
+    
     else
-      from.minutes(0)
+      from.seconds(0).minutes(0)
 
     query = 
       '_id.ep': req.params.endpoint
